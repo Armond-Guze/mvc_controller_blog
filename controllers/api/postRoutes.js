@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
-router.post('/', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const newProject = await Project.create({
+    const blogPost = await blogPost.create({
       ...req.body,
       user_id: req.session.user_id,
     });
